@@ -206,11 +206,54 @@ def cross_validation(train_folds, test_folds, kernel):
     return final_predictions
 
 
+def generate_ROC_curve(path, fig_name, kernel, Ytest, pred):
+    """
+    generate_ROC_curve, is a function used to generate the ROC curve.
+
+    :param path: the path to save the plot figure
+    :param fig_name: the figure name
+    :param kernel: the used kernel, used in the plot figure's name
+    :param Ytest: the real labels
+    :param pred: the predicted labels.
+
+    """
+    # calculate roc curve
+    fpr, tpr, thresholds = roc_curve(Ytest, pred)
+
+    pyplot.plot([0, 1], [0, 1], linestyle='--')
+    pyplot.plot(fpr, tpr, marker='.')
+    pyplot.xlabel('False Positive Rate')
+    pyplot.ylabel('True Positive Rate')
+    pyplot.savefig(path + "/" + kernel + "/" + "ROC" + "/" + fig_name)
+
+
+def generate_precision_recall_curve(path, fig_name, kernel, Ytest, pred):
+    """
+    generate_precision_recall_curve, is a function used to generate the precision-recall curve.
+
+    :param path: the path to save the plot figure
+    :param fig_name: the figure name
+    :param kernel: the used kernel, used in the plot figure's name
+    :param Ytest: the real labels
+    :param pred: the predicted labels.
+
+    """
+    precision, recall, thresholds = precision_recall_curve(Ytest, pred)
+
+    pyplot.plot([0, 1], [0.2, 0.2], linestyle='--')
+    pyplot.plot(recall, precision, marker='.')
+    pyplot.xlabel('Recall')
+    pyplot.ylabel('Presicion')
+    pyplot.savefig(path + "/" + kernel + "/" + "Pres-Recall" + "/" + fig_name)
+
+
 if __name__ == "__main__":
 
     # Reading Datasets, Dividing them in test and train, creating the folds,
     test_folds, train_folds = create_folds(data)
     num_features = train_folds[0][0].shape[1] - 1
+
+    plot_path = '../plots'
 
     # Apply the different models.
     run_flag = False
@@ -238,28 +281,24 @@ if __name__ == "__main__":
         global_prediction_list = [linear_predictions, rbf_predictions, Combined_predictions]
 
         for i in range(len(kernels)):
-
             for j in range(global_prediction_list[0].shape[0]):
 
                 Xtest, Ytest = separate_data_labels(test_folds[j], num_features)
 
                 print("Results for %s" % (kernels[i]))
+                print(" ****************************** ")
                 print("Fold %i: %s" % (j, EvaluationMetrics(Ytest, global_prediction_list[i][j])))
 
-                # calculate roc curve
-                fpr, tpr, thresholds = roc_curve(Ytest, global_prediction_list[i][j])
-                # plot no skill
-                pyplot.plot([0, 1], [0, 1], linestyle='--')
-                pyplot.plot(fpr, tpr, marker='.')
-                pyplot.show()
+                run_flag = False
+                if run_flag:  # ROC plots
+                    fig_name = 'roc' + kernels[i] + str(j)
+                    generate_ROC_curve(plot_path, fig_name, kernels[i], Ytest, global_prediction_list[i][j])
 
-                # calculate precision-recall curve
-                precision, recall, thresholds = precision_recall_curve(Ytest, global_prediction_list[i][j])
-                print(precision)
-                print(recall)
-                # plot no skill
-                pyplot.plot([0, 1], [0.5, 0.5], linestyle='--')
-                # plot the roc curve for the model
-                pyplot.plot(recall, precision, marker='.')
-                # show the plot
-                pyplot.show()
+                run_flag = True
+                if run_flag:  # Precision-Recall Plots
+                    fig_name = 'Precision-Recall' + kernels[i] + str(j)
+                    generate_precision_recall_curve(plot_path, fig_name, kernels[i], Ytest,
+                                                    global_prediction_list[i][j])
+
+            pyplot.clf()
+            print(" >>>>>>>>>>>> ")
