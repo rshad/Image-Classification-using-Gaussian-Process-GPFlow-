@@ -1,8 +1,9 @@
+from matplotlib import pyplot
 from scipy.io import loadmat
 import pandas as pd
 import numpy as np
 import gpflow
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, precision_recall_curve
 
 data = loadmat('../data/data.mat')
 
@@ -132,17 +133,17 @@ def EvaluationMetrics(Ytest, pred_probabilities):
     :return: metrics, a dictionary with an entry for each calculated metric.
     """
     TN, FP, FN, TP = confusion_matrix(Ytest, pred_probabilities).ravel()
-    print((TN, FP, FN, TP))
 
     accuracy = (TP + TN) / (TP + FN + FP + TN)
     specificity = TN / (TN + FP)
-    sensitivity = TP / (TP + FP)
+    sensitivity = TP / (TP + FN)
     precision = TP / (TP + FP)
     F_score = (2 * precision * sensitivity) / (precision + sensitivity);
+    auc = roc_auc_score(Ytest, pred_probabilities)
 
     metrics = {'accuracy': accuracy, 'specificity': specificity,
                'sensitivity': sensitivity, 'precision': precision,
-               'F_score': F_score}
+               'F_score': F_score, 'AUC': auc}
 
     return metrics
 
@@ -206,11 +207,14 @@ def cross_validation(train_folds, test_folds, kernel):
 
 
 if __name__ == "__main__":
+
+    # Reading Datasets, Dividing them in test and train, creating the folds,
+    test_folds, train_folds = create_folds(data)
+    num_features = train_folds[0][0].shape[1] - 1
+
+    # Apply the different models.
     run_flag = False
-
     if run_flag:
-        test_folds, train_folds = create_folds(data)
-
         predictions_RBF = cross_validation(train_folds, test_folds, "RBF")
         rbf_predictions = np.array(predictions_RBF)
         np.save("../data/saved_data_code/rbf_predictions", rbf_predictions)
@@ -223,3 +227,39 @@ if __name__ == "__main__":
         combined_predictions = np.array(predictions_Combined)
         np.save("../data/saved_data_code/predictions_Combined", predictions_Combined)
 
+    # Loading the saved predictions and Evaluation
+    run_flag = True
+    if run_flag:
+        linear_predictions = np.load("../data/saved_data_code/linear_predictions.npy")
+        rbf_predictions = np.load("../data/saved_data_code/rbf_predictions.npy")
+        Combined_predictions = np.load("../data/saved_data_code/predictions_Combined.npy")
+
+        kernels = ['LINEAR', 'RBF', 'COMBINED']
+        global_prediction_list = [linear_predictions, rbf_predictions, Combined_predictions]
+
+        for i in range(len(kernels)):
+
+            for j in range(global_prediction_list[0].shape[0]):
+
+                Xtest, Ytest = separate_data_labels(test_folds[j], num_features)
+
+                print("Results for %s" % (kernels[i]))
+                print("Fold %i: %s" % (j, EvaluationMetrics(Ytest, global_prediction_list[i][j])))
+
+                # calculate roc curve
+                fpr, tpr, thresholds = roc_curve(Ytest, global_prediction_list[i][j])
+                # plot no skill
+                pyplot.plot([0, 1], [0, 1], linestyle='--')
+                pyplot.plot(fpr, tpr, marker='.')
+                pyplot.show()
+
+                # calculate precision-recall curve
+                precision, recall, thresholds = precision_recall_curve(Ytest, global_prediction_list[i][j])
+                print(precision)
+                print(recall)
+                # plot no skill
+                pyplot.plot([0, 1], [0.5, 0.5], linestyle='--')
+                # plot the roc curve for the model
+                pyplot.plot(recall, precision, marker='.')
+                # show the plot
+                pyplot.show()
