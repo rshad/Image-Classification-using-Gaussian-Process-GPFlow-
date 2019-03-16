@@ -57,7 +57,7 @@ def create_folds(data):
         train_folds_aux = [x for j, x in enumerate(test_folds) if j != i]
 
         # concatenate all the dataframes corresponding to the result list of folds
-        #train_folds_aux_pd = pd.concat(train_folds_aux)
+        # train_folds_aux_pd = pd.concat(train_folds_aux)
 
         # adding the created fold to train_folds
         train_folds.append(train_folds_aux)
@@ -97,13 +97,22 @@ def model_VGP(Xtrain, Ytrain, kernel):
     if kernel == "RBF":
         model = gpflow.models.VGP(Xtrain, Ytrain,
                                   kern=gpflow.kernels.RBF(Xtrain.shape[1]),  # Specify the input dimension for the
-                                                                             # classifier. " Multidimensional "
+                                  # classifier. " Multidimensional "
                                   likelihood=likelihood)
     elif kernel == "Linear":
         model = gpflow.models.VGP(Xtrain, Ytrain,
                                   kern=gpflow.kernels.Linear(Xtrain.shape[1]),  # Specify the input dimension for the
-                                                                                # classifier. " Multidimensional "
+                                  # classifier. " Multidimensional "
                                   likelihood=likelihood)
+    elif kernel == "Combined":
+        # Defining the kernel's combination
+        kernel_combined = gpflow.kernels.RBF(Xtrain.shape[1]) * gpflow.kernels.Linear(Xtrain.shape[1])
+
+        model = gpflow.models.VGP(Xtrain, Ytrain,
+                                  kern=kernel_combined,
+                                  # classifier. " Multidimensional "
+                                  likelihood=likelihood)
+
     else:
         " modelling failed: The provided kernel is wrong or not available "
         return None
@@ -132,7 +141,7 @@ def EvaluationMetrics(Ytest, pred_probabilities):
     F_score = (2 * precision * sensitivity) / (precision + sensitivity);
 
     metrics = {'accuracy': accuracy, 'specificity': specificity,
-               'sensitivity': sensitivity,'precision': precision,
+               'sensitivity': sensitivity, 'precision': precision,
                'F_score': F_score}
 
     return metrics
@@ -191,16 +200,26 @@ def cross_validation(train_folds, test_folds, kernel):
         np.place(prediction_i, prediction_i <= theta, -1)  # Healthy => -1
         np.place(prediction_i, prediction_i > theta, 1)  # Malign => 1
 
-
         final_predictions.append(prediction_i)
 
     return final_predictions
 
 
 if __name__ == "__main__":
-    test_folds, train_folds = create_folds(data)
+    run_flag = False
 
-    predictions = cross_validation(train_folds, test_folds, "Linear")
+    if run_flag:
+        test_folds, train_folds = create_folds(data)
 
-    for i in predictions:
-        print(i)
+        predictions_RBF = cross_validation(train_folds, test_folds, "RBF")
+        rbf_predictions = np.array(predictions_RBF)
+        np.save("../data/saved_data_code/rbf_predictions", rbf_predictions)
+
+        predictions_Linear = cross_validation(train_folds, test_folds, "Linear")
+        linear_predictions = np.array(predictions_Linear)
+        np.save("../data/saved_data_code/linear_predictions", linear_predictions)
+
+        predictions_Combined = cross_validation(train_folds, test_folds, "Combined")
+        combined_predictions = np.array(predictions_Combined)
+        np.save("../data/saved_data_code/predictions_Combined", predictions_Combined)
+
