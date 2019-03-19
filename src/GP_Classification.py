@@ -125,6 +125,42 @@ def model_VGP(Xtrain, Ytrain, kernel):
     return model
 
 
+# Evaluation of Model - Confusion Matrix Plot
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=pyplot.cm.Blues):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+    if normalize:
+        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+        print("Normalized confusion matrix")
+    else:
+        print('Confusion matrix, without normalization')
+
+    print(cm)
+
+    pyplot.imshow(cm, interpolation='nearest', cmap=cmap)
+    pyplot.title(title)
+    pyplot.colorbar()
+    tick_marks = np.arange(len(classes))
+    pyplot.xticks(tick_marks, classes, rotation=45)
+    pyplot.yticks(tick_marks, classes)
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in np.itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        pyplot.text(j, i, format(cm[i, j], fmt),
+                    horizontalalignment="center",
+                    color="white" if cm[i, j] > thresh else "black")
+
+    pyplot.ylabel('True label')
+    pyplot.xlabel('Predicted label')
+    pyplot.tight_layout()
+
+
 def EvaluationMetrics(Ytest, pred_probabilities):
     """
     EvaluationMetrics, is a function used o calculate the different evaluation metrics.
@@ -133,6 +169,17 @@ def EvaluationMetrics(Ytest, pred_probabilities):
     :param pred_probabilities: the predicted labels.
     :return: metrics, a dictionary with an entry for each calculated metric.
     """
+    auc_roc = roc_auc_score(Ytest, pred_probabilities)
+
+    precision_, recall, thresholds = precision_recall_curve(Ytest, pred_probabilities)
+    auc_prc_recall = auc(recall, precision_)
+
+    ap = average_precision_score(Ytest, pred_probabilities)
+
+    np.place(pred_probabilities, pred_probabilities <= 0.5, -1)  # Healthy => -1
+    np.place(pred_probabilities, pred_probabilities > 0.5, 1)  # Malign => 1
+
+    mmc = matthews_corrcoef(Ytest, pred_probabilities)
     TN, FP, FN, TP = confusion_matrix(Ytest, pred_probabilities).ravel()
 
     accuracy = (TP + TN) / (TP + FN + FP + TN)
@@ -140,11 +187,6 @@ def EvaluationMetrics(Ytest, pred_probabilities):
     sensitivity = TP / (TP + FN)
     precision = TP / (TP + FP)
     F_score = (2 * precision * sensitivity) / (precision + sensitivity);
-    auc_roc = roc_auc_score(Ytest, pred_probabilities)
-    precision_, recall, thresholds = precision_recall_curve(Ytest, pred_probabilities)
-    auc_prc_recall = auc(recall, precision_)
-    ap = average_precision_score(Ytest, pred_probabilities)
-    mmc = matthews_corrcoef(Ytest, pred_probabilities)
 
     metrics = {'accuracy': accuracy, 'specificity': specificity,
                'sensitivity': sensitivity, 'precision': precision,
@@ -203,10 +245,7 @@ def cross_validation(train_folds, test_folds, kernel):
         # The final prediction for the fold i is calculated as the mean of all the calculated predictions in
         # i_predictions
         prediction_i = sum(i_predictions) / len(i_predictions)
-
-        # Replacing the probabilities with -1 if it's lower or equal to 0.5 and with 1 otherwise.
-        np.place(prediction_i, prediction_i <= theta, -1)  # Healthy => -1
-        np.place(prediction_i, prediction_i > theta, 1)  # Malign => 1
+        print(prediction_i)
 
         final_predictions.append(prediction_i)
 
@@ -227,7 +266,7 @@ def generate_ROC_curve(path, fig_name, kernel, Ytest, pred):
     # calculate roc curve
     fpr, tpr, thresholds = roc_curve(Ytest, pred)
 
-    pyplot.plot([0, 1], [0, 1], linestyle='--')
+    pyplot.plot([0.0, 1.0], [0.0, 1.0], linestyle='--')
     pyplot.plot(fpr, tpr, marker='.')
     pyplot.xlabel('False Positive Rate')
     pyplot.ylabel('True Positive Rate')
@@ -267,22 +306,22 @@ if __name__ == "__main__":
     if run_flag:
         predictions_RBF = cross_validation(train_folds, test_folds, "RBF")
         rbf_predictions = np.array(predictions_RBF)
-        np.save("../data/saved_data_code/rbf_predictions", rbf_predictions)
+        np.save("../data/saved_data_code/rbf_predictions_0", rbf_predictions)
 
         predictions_Linear = cross_validation(train_folds, test_folds, "Linear")
         linear_predictions = np.array(predictions_Linear)
-        np.save("../data/saved_data_code/linear_predictions", linear_predictions)
+        np.save("../data/saved_data_code/linear_predictions_0", linear_predictions)
 
         predictions_Combined = cross_validation(train_folds, test_folds, "Combined")
         combined_predictions = np.array(predictions_Combined)
-        np.save("../data/saved_data_code/predictions_Combined", predictions_Combined)
+        np.save("../data/saved_data_code/predictions_Combined_0", predictions_Combined)
 
     # Loading the saved predictions and Evaluation
     run_flag = True
     if run_flag:
-        linear_predictions = np.load("../data/saved_data_code/linear_predictions.npy")
-        rbf_predictions = np.load("../data/saved_data_code/rbf_predictions.npy")
-        Combined_predictions = np.load("../data/saved_data_code/predictions_Combined.npy")
+        linear_predictions = np.load("../data/saved_data_code/linear_predictions_0.npy")
+        rbf_predictions = np.load("../data/saved_data_code/rbf_predictions_0.npy")
+        Combined_predictions = np.load("../data/saved_data_code/predictions_Combined_0.npy")
 
         kernels = ['LINEAR', 'RBF', 'COMBINED']
         global_prediction_list = [linear_predictions, rbf_predictions, Combined_predictions]
@@ -294,14 +333,14 @@ if __name__ == "__main__":
 
                 print("Results for %s" % (kernels[i]))
                 print(" ****************************** ")
-                print("Fold %i: %s" % (j, EvaluationMetrics(Ytest, global_prediction_list[i][j])))
+                print("Fold %i: %s" % (j, EvaluationMetrics(Ytest, global_prediction_list[i][j].copy())))
 
                 run_flag = False
                 if run_flag:  # ROC plots
                     fig_name = 'roc' + kernels[i] + str(j)
                     generate_ROC_curve(plot_path, fig_name, kernels[i], Ytest, global_prediction_list[i][j])
 
-                run_flag = False
+                run_flag = True
                 if run_flag:  # Precision-Recall Plots
                     fig_name = 'Precision-Recall' + kernels[i] + str(j)
                     generate_precision_recall_curve(plot_path, fig_name, kernels[i], Ytest,
