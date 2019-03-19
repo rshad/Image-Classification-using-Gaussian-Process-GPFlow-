@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c85b7a3d-5732-4313-9a41-6769a5fe3af2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/rashz.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/rashz.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/GP_Classification.py" afterPath="$PROJECT_DIR$/src/GP_Classification.py" />
     </list>
@@ -17,19 +16,91 @@
     <SUITE FILE_PATH="coverage/GPIC$test.coverage" NAME="test Coverage Results" MODIFIED="1552575696776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/GPIC$ReadingData.coverage" NAME="ReadingData Coverage Results" MODIFIED="1552452795490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/GPIC$t.coverage" NAME="t Coverage Results" MODIFIED="1552579095533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/GPIC$GP_Classification.coverage" NAME="GP_Classification Coverage Results" MODIFIED="1552773384786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/GPIC$GP_Classification.coverage" NAME="GP_Classification Coverage Results" MODIFIED="1552855462630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GP_Classification.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GP_Classification.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GP_Classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="294" column="37" lean-forward="false" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
+            <state relative-caret-position="4324">
+              <caret line="194" column="34" lean-forward="false" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/gpflow/models/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="41" selection-end-line="189" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="likelihoods.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/gpflow/likelihoods.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rocLINEAR0.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR0.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rocLINEAR1.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR1.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rocLINEAR2.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR2.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rocLINEAR3.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR3.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rocLINEAR4.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR4.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/sklearn/utils/validation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4899">
+              <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Precision-RecallCOMBINED4.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED4.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -69,10 +140,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1506" />
-    <option name="y" value="255" />
-    <option name="width" value="1380" />
-    <option name="height" value="745" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -109,8 +180,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,34 +198,7 @@
               <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
               <item name="GPIC" type="462c0819:PsiDirectoryNode" />
               <item name="plots" type="462c0819:PsiDirectoryNode" />
-              <item name="COMBINED" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
-              <item name="COMBINED" type="462c0819:PsiDirectoryNode" />
-              <item name="Pres-Recall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
-              <item name="COMBINED" type="462c0819:PsiDirectoryNode" />
-              <item name="ROC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
               <item name="LINEAR" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
-              <item name="LINEAR" type="462c0819:PsiDirectoryNode" />
-              <item name="Pres-Recall" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
@@ -162,12 +206,6 @@
               <item name="plots" type="462c0819:PsiDirectoryNode" />
               <item name="LINEAR" type="462c0819:PsiDirectoryNode" />
               <item name="ROC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GPIC" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
-              <item name="RBF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GPIC" type="b2602c69:ProjectViewProjectNode" />
@@ -181,7 +219,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
@@ -313,15 +351,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3402556" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2889126" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0127795525" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.84166664" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -350,268 +389,130 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/gpflow/models/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="191" column="28" lean-forward="false" selection-start-line="191" selection-start-column="28" selection-end-line="191" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/t.py" />
-    <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/sklearn/metrics/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="186" column="35" lean-forward="false" selection-start-line="186" selection-start-column="29" selection-end-line="186" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/roc0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/roc1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/roc2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/roc3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/roc4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/roc4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/roc3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/roc2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/roc1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/roc0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/RBF/roc0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/roc0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/rocRBF4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/RBF/Precision-RecallRBF4.png" />
     <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="2807" column="4" lean-forward="false" selection-start-line="2807" selection-start-column="4" selection-end-line="2807" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED0.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED1.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED2.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED3.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED4.png" />
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Pres-Recall/Precision-RecallCOMBINED4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4899">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR2.png">
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR0.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR3.png">
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR1.png">
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR2.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/rocLINEAR0.png">
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR3.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/LINEAR/Precision-RecallLINEAR4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/rocCOMBINED0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED1.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED3.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/COMBINED/Precision-RecallCOMBINED4.png">
+    <entry file="file://$PROJECT_DIR$/plots/LINEAR/ROC/rocLINEAR4.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GP_Classification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="294" column="37" lean-forward="false" selection-start-line="294" selection-start-column="37" selection-end-line="294" selection-end-column="37" />
+        <state relative-caret-position="4324">
+          <caret line="194" column="34" lean-forward="false" selection-start-line="194" selection-start-column="34" selection-end-line="194" selection-end-column="34" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/gpflow/likelihoods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv1/Lib/site-packages/gpflow/models/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="189" column="41" lean-forward="false" selection-start-line="189" selection-start-column="41" selection-end-line="189" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>

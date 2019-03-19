@@ -3,7 +3,8 @@ from scipy.io import loadmat
 import pandas as pd
 import numpy as np
 import gpflow
-from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, precision_recall_curve
+from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, precision_recall_curve, auc, \
+    average_precision_score, matthews_corrcoef
 
 data = loadmat('../data/data.mat')
 
@@ -139,11 +140,17 @@ def EvaluationMetrics(Ytest, pred_probabilities):
     sensitivity = TP / (TP + FN)
     precision = TP / (TP + FP)
     F_score = (2 * precision * sensitivity) / (precision + sensitivity);
-    auc = roc_auc_score(Ytest, pred_probabilities)
+    auc_roc = roc_auc_score(Ytest, pred_probabilities)
+    precision_, recall, thresholds = precision_recall_curve(Ytest, pred_probabilities)
+    auc_prc_recall = auc(recall, precision_)
+    ap = average_precision_score(Ytest, pred_probabilities)
+    mmc = matthews_corrcoef(Ytest, pred_probabilities)
 
     metrics = {'accuracy': accuracy, 'specificity': specificity,
                'sensitivity': sensitivity, 'precision': precision,
-               'F_score': F_score, 'AUC': auc}
+               'F_score': F_score, 'AUC_Recall': auc_roc,
+               'AUC_PRECISION_RECALL': auc_prc_recall, 'Average Precision Score': ap,
+               'mmc': mmc}
 
     return metrics
 
@@ -294,7 +301,7 @@ if __name__ == "__main__":
                     fig_name = 'roc' + kernels[i] + str(j)
                     generate_ROC_curve(plot_path, fig_name, kernels[i], Ytest, global_prediction_list[i][j])
 
-                run_flag = True
+                run_flag = False
                 if run_flag:  # Precision-Recall Plots
                     fig_name = 'Precision-Recall' + kernels[i] + str(j)
                     generate_precision_recall_curve(plot_path, fig_name, kernels[i], Ytest,
